@@ -1,0 +1,19 @@
+{
+  "name": "directorio_telefonico",
+  "version": "1.0.0",
+  "description": "basic phone directory api for make it real camp using node, modularity and express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Alejandro Becerra",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
