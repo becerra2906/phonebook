@@ -1,7 +1,7 @@
 const { json } = require('express');
 const express = require('express');
 const app = express();
-const port =  process.env.port ||3001;
+const port =  process.env.PORT ||3001;
 const contacts = [
     {
         firstName: "Alejandro",
