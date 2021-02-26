@@ -29,14 +29,6 @@ app.get('/info',(req,res)=>{
     res.send(`This phonebook has info for ${contacts.length} contacts </br>${date}`);
 })
 
-///const newContact = function  newcontacts (firstName, surname, number, address, email){
-///    firstName = String(this.name),
-///    surname = String(this.surname),
-///    number = Number(this.number),
-///    address = String(this.address),
-///    email = String(this.email),
-///    id = Number(contacts.length + 1)
-/// }
 
 app.post('/api/contacts',(req,res)=>{
     const contactInfo = req.body
@@ -44,7 +36,11 @@ app.post('/api/contacts',(req,res)=>{
     contacts.push(contactInfo);
     if (contactInfo){
         console.log(contacts);
-        return res.send(`Contact created successfully`);
+         
+        return res.send({
+            data: contacts,
+            message: `Contact created successfully`
+        });
     }
     else {
         res.status(400);
@@ -63,13 +59,13 @@ app.get('/api/contacts',(req,res)=>{
 })
 
 app.get('/api/contacts/:id',(req,res)=>{
-    const id = Number(req.params.id);
+    const id =  (req.params.id);
     const contact = (contacts.find(contactSearched => contactSearched.id === id));
     if (contact){
         res.send(contact);
     }
     else{
-        res.status(204);
+        res.status(404);
         res.send('No contact available with that ID');
         res.console.log('No contact available with that ID');
     }
