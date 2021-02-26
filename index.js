@@ -14,11 +14,14 @@ const contacts = [
 
     }
 ];
+const cors = require('cors');
 const idGenerator = contacts.length + 1;
 
 
 
 app.use(json());
+
+app.use(cors());
 
 app.get('/api',(req,res)=>{
     res.send("<p>This api allows you to access and add contacts to a phone directory</p>");
